@@ -1,6 +1,11 @@
 @import "bootstrap/scss/functions";
 
+$body-bg: #fffdf4;
+
+$primary: #ffe17b;
 $secondary: #606c5d;
+$light: #fff9f9;
+$dark: #363636;
 
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
@@ -8,6 +13,7 @@ $secondary: #606c5d;
 // Create your own map
 $custom-colors: (
   "green": #dae2b6,
+  "card": #f4ead5,
 );
 
 // Merge the maps
