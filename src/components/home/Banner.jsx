@@ -41,7 +41,7 @@ export default function Banner(props) {
                 </div>
             </div>
 
-            <Modal show={showModal} onHide={() => { setShowModal(false) }} contentClassName="rounded-0 bg-white min-h-700px min-w-lg-640px d-flex flex-column">
+            <Modal show={showModal} onHide={() => { setShowModal(false) }} contentClassName="rounded-0 bg-white min-h-700px min-w-lg-640px d-flex flex-column pb-5">
                 <div className="py-2 px-3 text-end">
                     <i className="bi bi-x-circle text-danger fs-2 hover-scale d-inline-block cursor-pointer" onClick={() => { setShowModal(false) }}></i>
                 </div>
@@ -53,32 +53,29 @@ export default function Banner(props) {
                         </div>
 
                 }
-                <div className="py-30px px-40px d-flex flex-column justify-content-between flex-grow-1">
+                <div className="px-40px flex-grow-1">
                     {
-                        loading || !item ?
-                            <>
-                                <div className="text-center fs-4">
-                                    <Spinner />
-                                </div>
-
-                            </> :
-                            <>
-                                <h4 className="fs-1 fw-bold text-center">{item.strMeal}</h4>
-                                <div className="mt-40px">
-                                    <Button className="fw-semibold fs-20px">{item.strCategory}</Button>
-                                </div>
-                            </>
+                        !loading && item &&
+                        <>
+                            <h4 className="fs-1 fw-bold text-center mt-4">{item.strMeal}</h4>
+                            <div className="mt-40px">
+                                <Button className="fw-semibold fs-20px">{item.strCategory}</Button>
+                            </div>
+                        </>
                     }
+                </div>
 
+                <div className="px-40px mt-3">
+                    <div className="d-flex flex-wrap flex-column flex-lg-row gap-3 justify-content-between mt-4">
+                        <Button className="fw-bold fs-26px py-2 px-4">View recipe</Button>
+                        <Button className="fw-bold fs-26px py-2 px-4 text-primary" variant="secondary" onClick={fetchRandom}>
+                            <i class="bi bi-arrow-left-right me-2"></i>
+                            Change
+                        </Button>
+                        <Button className="fw-bold fs-26px py-2 px-4" variant="outline-danger" onClick={() => { setShowModal(false) }}>Close</Button>
+                    </div>
                 </div>
-                <div className="py-30px px-40px d-flex flex-wrap flex-column flex-lg-row gap-3 justify-content-between">
-                    <Button className="fw-bold fs-26px py-2 px-4">View recipe</Button>
-                    <Button className="fw-bold fs-26px py-2 px-4 text-primary" variant="secondary" onClick={fetchRandom}>
-                        <i class="bi bi-arrow-left-right me-2"></i>
-                        Change
-                    </Button>
-                    <Button className="fw-bold fs-26px py-2 px-4" variant="outline-danger" onClick={() => { setShowModal(false) }}>Close</Button>
-                </div>
+
 
             </Modal>
         </>

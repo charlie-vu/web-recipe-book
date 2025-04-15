@@ -26,7 +26,7 @@ export default function Category(props) {
             <h2 className="fw-semibold fs-32px text-center">Categories</h2>
 
             <div className="mt-4 px-40px">
-                <Swiper spaceBetween={24} breakpoints={{ 320: { slidesPerView: 1.5 }, 1024: { slidesPerView: 6.5 }, 1400: { slidesPerView: 8 } }}>
+                <Swiper spaceBetween={24} breakpoints={{ 320: { slidesPerView: 1.5 }, 1024: { slidesPerView: 6.5 }, 1400: { slidesPerView: 8.5 } }}>
                     {
                         !categoryList.length ?
                             [...Array(8)].map((_, i) =>
