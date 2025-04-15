@@ -75,3 +75,14 @@ a {
     box-shadow: none;
   }
 }
+
+.hover-scale {
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
