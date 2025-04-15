@@ -36,7 +36,7 @@ export default function Category(props) {
                             ) :
                             categoryList.map((item, i) =>
                                 <SwiperSlide key={`category-${i}`}>
-                                    <Link href="#" className="item">
+                                    <Link href={`/category/${item.idCategory}`} className="item">
                                         <div className="rounded-5px bg-card p-2 min-h-126px min-w-129px shadow-sm text-center hover-grow">
                                             <img src={item.strCategoryThumb} alt={item.strCategory} className="w-100" />
                                             <p className="fw-bold text-dark text-shadow mt-1">{item.strCategory}</p>

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button, Card, Form, Placeholder, Row } from "react-bootstrap";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Feature(props) {
     const {
@@ -9,6 +10,8 @@ export default function Feature(props) {
         loading = false,
 
     } = props;
+
+    const router = useRouter();
     return (
         <div className={`container ${className}`}>
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-4 gy-5">
@@ -16,17 +19,20 @@ export default function Feature(props) {
                 {
                     !loading && !!featureList.length && featureList.map((item, i) =>
                         <div key={`${item.strMeal}-${i}`} className="col">
-                            <Link href='#' className="d-block hover-jump">
-                                <div className="rounded-4px bg-white shadow overflow-hidden">
-                                    <div className="ratio ratio-4x3">
-                                        <img src={item.strMealThumb} alt={item.strMeal} className="" />
+
+                            <div className="rounded-4px bg-white shadow overflow-hidden">
+                                <Link href={`/meal/${item.idMeal}`}>
+                                    <div className="ratio ratio-4x3 overflow-hidden">
+                                        <img src={item.strMealThumb} alt={item.strMeal} className="hover-scale" />
                                     </div>
-                                    <div className="p-3">
-                                        <h4 className="fw-bold fs-20px line-clamp-1">{item.strMeal}</h4>
-                                        <Button className="mt-3 fw-semibold fs-12px shadow rounded-10px">{item.strCategory}</Button>
-                                    </div>
+                                    <h4 className="fw-bold fs-20px line-clamp-1 mt-3 px-3">{item.strMeal}</h4>
+
+                                </Link>
+                                <div className="px-3 pb-3">
+                                    <Button className="mt-3 fw-semibold fs-12px shadow rounded-10px" onClick={() => { router.push(`/category?s=${item.strCategory}`) }}>{item.strCategory}</Button>
                                 </div>
-                            </Link>
+                            </div>
+
                         </div>
                     )
                 }

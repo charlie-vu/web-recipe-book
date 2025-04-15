@@ -59,7 +59,7 @@ export default function Banner(props) {
                         <>
                             <h4 className="fs-1 fw-bold text-center mt-4">{item.strMeal}</h4>
                             <div className="mt-40px">
-                                <Button className="fw-semibold fs-20px">{item.strCategory}</Button>
+                                <Button className="fw-semibold fs-20px" href={`/category?s=${item.strCategory}`}>{item.strCategory}</Button>
                             </div>
                         </>
                     }
@@ -67,8 +67,8 @@ export default function Banner(props) {
 
                 <div className="px-40px mt-3">
                     <div className="d-flex flex-wrap flex-column flex-lg-row gap-3 justify-content-between mt-4">
-                        <Button className="fw-bold fs-26px py-2 px-4">View recipe</Button>
-                        <Button className="fw-bold fs-26px py-2 px-4 text-primary" variant="secondary" onClick={fetchRandom}>
+                        <Button className="fw-bold fs-26px py-2 px-4" href={`/meal/${item?.idMeal}`} disabled={!item || loading}>View recipe</Button>
+                        <Button className="fw-bold fs-26px py-2 px-4 text-primary" variant="secondary" onClick={fetchRandom} disabled={!item || loading}>
                             <i class="bi bi-arrow-left-right me-2"></i>
                             Change
                         </Button>
