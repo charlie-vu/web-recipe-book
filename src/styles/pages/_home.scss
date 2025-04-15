@@ -1,6 +1,17 @@
-.banner{
-    min-height: 240px;
-    background-image: url('/images/home/banner.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+.banner {
+  min-height: 240px;
+  background-image: url("/images/home/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.category {
+  .item {
+    img {
+      transition: all 0.2s;
+    }
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
 }

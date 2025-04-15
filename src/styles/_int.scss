@@ -1,0 +1,16 @@
+@for $i from 1 through 10 {
+  .line-clamp-#{$i} {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: #{$i};
+    overflow: hidden;
+  }
+}
+
+.min-w-100 {
+  min-width: 100% !important;
+}
+
+.min-h-100 {
+  min-height: 100% !important;
+}
