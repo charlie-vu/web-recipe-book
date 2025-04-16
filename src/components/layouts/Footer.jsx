@@ -8,7 +8,7 @@ export default function Footer() {
                     <div className="d-flex flex-column flex-md-row gap-4 justify-content-md-between align-items-center">
                         <Link href="/">
                             <div className="d-flex gap-3 align-items-center">
-                                <img src="images/logo.png" alt="findtoeat" width={70} />
+                                <img src="/images/logo.png" alt="findtoeat" width={70} />
                                 <h2 className="fw-semibold fs-24px text-secondary">FINDTOEAT</h2>
                             </div>
                         </Link>
