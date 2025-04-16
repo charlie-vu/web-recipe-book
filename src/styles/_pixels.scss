@@ -16,20 +16,11 @@
   gap: 32px !important;
 }
 
-.mt-32px {
-  margin-top: 32px !important;
-}
-.mt-34px {
-  margin-top: 34px !important;
-}
-.mt-40px {
-  margin-top: 40px !important;
-}
-.mt-56px {
-  margin-top: 56px !important;
-}
-.mt-68px {
-  margin-top: 68px !important;
+$marginTops: 32, 34, 40, 48, 56, 68, 80;
+@each $i in $marginTops {
+  .mt-#{$i}px {
+    margin-top: #{$i}px !important;
+  }
 }
 
 .px-40px {
@@ -45,6 +36,10 @@
   padding-top: 42px !important;
   padding-bottom: 42px !important;
 }
+.py-74px {
+  padding-top: 74px !important;
+  padding-bottom: 74px !important;
+}
 
 .max-w-650px {
   max-width: 650px !important;
@@ -52,8 +47,14 @@
 .min-h-126px {
   min-height: 126px !important;
 }
+.min-h-200px {
+  min-height: 200px !important;
+}
 .min-h-360px {
   min-height: 360px !important;
+}
+.min-h-540px {
+  min-height: 540px !important;
 }
 .min-h-800px {
   min-height: 800px !important;
