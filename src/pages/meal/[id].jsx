@@ -12,7 +12,7 @@ export default function MealId() {
     useEffect(() => {
         if (!id) return
         api.get(`lookup.php?i=${id}`).then((res) => {
-            console.log(res.data)
+            // console.log(res.data)
             setItem(res.data.meals[0])
         })
     }, [id])
@@ -51,11 +51,13 @@ export default function MealId() {
                 <div className="mt-32px row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
                     {
                         ingredients.length ? ingredients.map((item, i) =>
-                            <div key={item.name} className="col">
-                                <div className="bg-white rounded-4 p-3 text-center fw-semibold h-100">
+                            <div key={`${item.name}-${i}`} className="col">
+                                <div className="bg-white rounded-4 p-3 text-center fw-semibold h-100 min-h-200px d-flex flex-column justify-content-between">
                                     <img src={item.imgurl} alt={item.name} className="w-100" />
-                                    <p>{item.name}</p>
-                                    <p>({item.amount})</p>
+                                    <div className="mt-3">
+                                        <p>{item.name}</p>
+                                        <p>({item.amount})</p>
+                                    </div>
                                 </div>
                             </div>
                         ) :
