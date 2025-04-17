@@ -29,7 +29,7 @@ export default function Feature(props) {
 
                                 </Link>
                                 <div className="px-3 pb-3">
-                                    <Button className="mt-3 fw-semibold fs-12px shadow rounded-10px" onClick={() => { router.push(`/category?s=${item.strCategory}`) }}>{item.strCategory}</Button>
+                                    <Button className="mt-3 fw-semibold fs-12px shadow rounded-10px" onClick={() => { router.push(`/category/${item.strCategory}`) }}>{item.strCategory}</Button>
                                 </div>
                             </div>
 
