@@ -32,7 +32,7 @@ export default function MealId() {
     return (
         <div className="container py-74px">
             <h2 className="text-center fw-bold fs-48px">{item?.strMeal}</h2>
-            <div className="mt-5 px-5">
+            <div className="mt-5 px-lg-5">
                 {
                     !item ?
                         <div className="skeleton-glow min-h-540px"></div> :
@@ -42,13 +42,13 @@ export default function MealId() {
                 }
 
                 <div className="mt-4 text-end">
-                    <Button>{item?.strCategory}</Button>
+                    <Button href={`/category/${item?.strCategory}`}>{item?.strCategory}</Button>
                 </div>
             </div>
 
             <div className="mt-56px">
                 <h4 className="fw-semibold fs-36px text-center">Ingredients</h4>
-                <div className="mt-32px row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
+                <div className="mt-32px row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
                     {
                         ingredients.length ? ingredients.map((item, i) =>
                             <div key={`${item.name}-${i}`} className="col">

@@ -24,6 +24,15 @@ export default function Footer() {
                             </a>
                         </div>
                     </div>
+
+                    <div className="border-top border-1 mt-3 pt-3 border-secondary small">
+                        <div className="d-flex flex-wrap justify-content-end align-items-center column-gap-5">
+                            <p>Source: <a href="https://github.com/charlie-vu/web-recipe-book" target="_blank" className="fw-semibold">Github</a></p>
+                            <p>Figma: <a href="https://www.figma.com/design/wtulIuCRE3uUUSxoKdX7kN/Web-recipe-book--Community" target="_blank" className="fw-semibold">Web Recipe Book (Community)</a></p>
+                            <p>API: <a href="https://www.themealdb.com/" target="_blank" className="fw-semibold">The Meal DB</a></p>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
