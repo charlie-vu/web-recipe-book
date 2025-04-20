@@ -10,7 +10,7 @@ import Banner from "@/components/home/Banner";
 
 export default function Home() {
   const [featureList, setFeatureList] = useState([]);
-  const [loadingFeature, setLoadingFeature] = useState(false);
+  const [loadingFeature, setLoadingFeature] = useState(true);
 
   // ====== Debounce Search
   const [query, setQuery] = useState('');
@@ -33,10 +33,6 @@ export default function Home() {
     // Cleanup on unmount to avoid memory leaks
     return handleSearch.cancel;
   }, [query, handleSearch]);
-
-  const fetchRandom = () => {
-
-  }
 
   return (
     <>

@@ -12,10 +12,6 @@ export default function Feature(props) {
     } = props;
 
     const router = useRouter();
-    const [isClient, setIsClient] = useState(false);
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
 
     return (
         <div className={`container ${className}`}>
@@ -52,7 +48,7 @@ export default function Feature(props) {
                 }
 
                 {
-                    isClient && !loading && !featureList.length &&
+                    !loading && !featureList.length &&
                     <h4 className="text-danger">No Meals Found!</h4>
                 }
 
