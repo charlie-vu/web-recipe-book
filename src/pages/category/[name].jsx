@@ -36,7 +36,7 @@ export default function Category() {
 
             <div className="row row-cols-1 row-cols-lg-3 gx-3 gy-5 pt-4">
                 {
-                    !!list && list.length && list.map((item, i) =>
+                    !!list && !!list.length && list.map((item, i) =>
                         <div key={`${item.strMeal}-${i}`} className="col">
                             <div className="bg-white rounded-3 overflow-hidden h-100 shadow d-flex flex-column gap-3 pb-4">
                                 <div className="ratio ratio-4x3 overflow-hidden">
