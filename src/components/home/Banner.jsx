@@ -59,7 +59,7 @@ export default function Banner(props) {
                         <>
                             <h4 className="fs-1 fw-bold text-center mt-4">{item.strMeal}</h4>
                             <div className="mt-40px">
-                                <Button className="fw-semibold fs-20px" href={`/category?s=${item.strCategory}`}>{item.strCategory}</Button>
+                                <Button className="fw-semibold fs-20px" href={`/category/${item.strCategory}`}>{item.strCategory}</Button>
                             </div>
                         </>
                     }
@@ -75,8 +75,6 @@ export default function Banner(props) {
                         <Button className="fw-bold fs-26px py-2 px-4" variant="outline-danger" onClick={() => { setShowModal(false) }}>Close</Button>
                     </div>
                 </div>
-
-
             </Modal>
         </>
     )
