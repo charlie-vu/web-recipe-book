@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button, Card, Form, Placeholder, Row } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useMediaQuery } from "react-responsive";
 
 export default function Feature(props) {
     const {
@@ -12,6 +13,7 @@ export default function Feature(props) {
     } = props;
 
     const router = useRouter();
+    const isLg = useMediaQuery({ minWidth: 1024 })
 
     return (
         <div className={`container ${className}`}>
@@ -19,8 +21,7 @@ export default function Feature(props) {
 
                 {
                     !loading && !!featureList.length && featureList.map((item, i) =>
-                        <div key={`${item.strMeal}-${i}`} className="col">
-
+                        <div key={`${item.strMeal}-${i}`} className="col" data-aos={i >= 3 && "fade-up"} data-aos-delay={isLg && ((i % 3) + 1) * 100}>
                             <div className="rounded-4px bg-white shadow overflow-hidden">
                                 <Link href={`/meal/${item.idMeal}`}>
                                     <div className="ratio ratio-4x3 overflow-hidden">

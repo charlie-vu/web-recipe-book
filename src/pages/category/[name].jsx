@@ -2,12 +2,15 @@ import api from "@/plugins/axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react"
 import { Button, Spinner } from "react-bootstrap";
+import { useMediaQuery } from "react-responsive";
 
 export default function Category() {
     const router = useRouter();
     const [list, setList] = useState([]);
     const [loading, setLoading] = useState(false);
     const category = router.query.name;
+
+    const isLg = useMediaQuery({ minWidth: 1024 })
 
     useEffect(() => {
         if (category) {
@@ -29,7 +32,7 @@ export default function Category() {
 
             {
                 loading &&
-                <div className="text-center mt-4">
+                <div className="text-center mt-5">
                     <Spinner animation="grow" />
                 </div>
             }
@@ -37,7 +40,7 @@ export default function Category() {
             <div className="row row-cols-1 row-cols-lg-3 gx-3 gy-5 pt-4">
                 {
                     !!list && !!list.length && list.map((item, i) =>
-                        <div key={`${item.strMeal}-${i}`} className="col">
+                        <div key={`${item.strMeal}-${i}`} className="col" data-aos="fade-up" data-aos-delay={isLg && (i % 6 + 1) * 100}>
                             <div className="bg-white rounded-3 overflow-hidden h-100 shadow d-flex flex-column gap-3 pb-4">
                                 <div className="ratio ratio-4x3 overflow-hidden">
                                     <img src={item.strMealThumb} alt={item.strMeal} className="w-100 h-auto top-50 start-50 translate-middle" />

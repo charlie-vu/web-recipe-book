@@ -35,9 +35,9 @@ export default function Banner(props) {
         <>
             <div className={`banner py-42px px-3 ${className}`}>
                 <div className="text-light text-center">
-                    <h4 className="fw-bold fs-40px">you don't know what to cook today?</h4>
-                    <h4 className="fw-semibold fs-32px">Try a surprise recipe</h4>
-                    <button className="btn btn-primary mt-3 fs-24px" onClick={() => { setShowModal(true) }}>Surprise recipe</button>
+                    <h4 className="fw-bold fs-40px" data-aos="fade-down">you don't know what to cook today?</h4>
+                    <h4 className="fw-semibold fs-32px" data-aos="zoom-in" data-aos-delay="350">Try a surprise recipe</h4>
+                    <button className="btn btn-primary mt-3 fs-24px" data-aos="fade-up" data-aos-delay="700" onClick={() => { setShowModal(true) }}>Surprise recipe</button>
                 </div>
             </div>
 

@@ -1,11 +1,17 @@
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import '@/styles/bootstrap-custom.scss';
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import 'aos/dist/aos.css';
 
 import "@/styles/globals.scss";
 import Head from 'next/head';
+import { useEffect } from 'react';
+import Aos from 'aos';
 
 export default function App({ Component, pageProps }) {
+  useEffect(()=>{
+    Aos.init();
+  },[])
   return (
     <>
       <Head>
