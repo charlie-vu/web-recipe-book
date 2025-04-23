@@ -49,7 +49,7 @@ export default function Category() {
                                     <h4 className="fw-semibold">{item.strMeal}</h4>
                                 </div>
                                 <div className="px-4">
-                                    <Button href={`/meal/${item.idMeal}`}>View Recipe</Button>
+                                    <Button onClick={() => { router.push(`/meal/${item.idMeal}`) }}>View Recipe</Button>
                                 </div>
                             </div>
                         </div>

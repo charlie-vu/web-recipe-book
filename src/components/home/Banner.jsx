@@ -1,5 +1,6 @@
 'use client'
 import api from "@/plugins/axios";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react"
 import { Button, Modal, Spinner } from "react-bootstrap"
 
@@ -7,6 +8,8 @@ export default function Banner(props) {
     const {
         className = '',
     } = props
+
+    const router = useRouter();
 
     const [showModal, setShowModal] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -59,7 +62,7 @@ export default function Banner(props) {
                         <>
                             <h4 className="fs-1 fw-bold text-center mt-4">{item.strMeal}</h4>
                             <div className="mt-40px">
-                                <Button className="fw-semibold fs-20px" href={`/category/${item.strCategory}`}>{item.strCategory}</Button>
+                                <Button className="fw-semibold fs-20px" onClick={() => { router.push(`/category/${item.strCategory}`) }}>{item.strCategory}</Button>
                             </div>
                         </>
                     }
@@ -67,9 +70,9 @@ export default function Banner(props) {
 
                 <div className="px-40px mt-3">
                     <div className="d-flex flex-wrap flex-column flex-lg-row gap-3 justify-content-between mt-4">
-                        <Button className="fw-bold fs-26px py-2 px-4" href={`/meal/${item?.idMeal}`} disabled={!item || loading}>View recipe</Button>
+                        <Button className="fw-bold fs-26px py-2 px-4" disabled={!item || loading} onClick={() => { router.push(`/meal/${item?.idMeal}`) }}>View recipe</Button>
                         <Button className="fw-bold fs-26px py-2 px-4 text-primary" variant="secondary" onClick={fetchRandom} disabled={!item || loading}>
-                            <i class="bi bi-arrow-left-right me-2"></i>
+                            <i className="bi bi-arrow-left-right me-2"></i>
                             Change
                         </Button>
                         <Button className="fw-bold fs-26px py-2 px-4" variant="outline-danger" onClick={() => { setShowModal(false) }}>Close</Button>

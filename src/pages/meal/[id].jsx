@@ -42,7 +42,7 @@ export default function MealId() {
                 }
 
                 <div className="mt-4 text-end">
-                    <Button href={`/category/${item?.strCategory}`}>{item?.strCategory}</Button>
+                    <Button onClick={() => { router.push(`/category/${item.strCategory}`) }}>{item?.strCategory}</Button>
                 </div>
             </div>
 
