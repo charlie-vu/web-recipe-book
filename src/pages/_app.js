@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import Aos from 'aos';
 
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from "@vercel/analytics/react"
 
 const gaId = 'G-HZE71CQT7R';
 
@@ -30,6 +31,7 @@ export default function App({ Component, pageProps }) {
       </DefaultLayout>
 
       <GoogleAnalytics gaId={gaId} />
+      <Analytics />
     </>
   )
 
