@@ -8,10 +8,14 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import Aos from 'aos';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+
+const gaId = 'G-HZE71CQT7R';
+
 export default function App({ Component, pageProps }) {
-  useEffect(()=>{
+  useEffect(() => {
     Aos.init();
-  },[])
+  }, [])
   return (
     <>
       <Head>
@@ -24,6 +28,8 @@ export default function App({ Component, pageProps }) {
       <DefaultLayout>
         <Component {...pageProps} />;
       </DefaultLayout>
+
+      <GoogleAnalytics gaId={gaId} />
     </>
   )
 
